@@ -1,15 +1,16 @@
 # Simple-Exercise-App
-A simple exercise app using JavaFX, a chronometer with some things more
 
 ## Requirements:
-* The app consist of a chronometer that displays the excersice in instance.
-* Multilenguage support is necessary.
-* The duration of the exercise is customizable.
-* Before starting another exercise there is a time delay which has to be greater or equal than 0, this is customizable too.
-* The app should have an option to speak the name of the exercise being done in the corresponding language.
-* The user can create `routines` which are defined as a ordered list of exercises, time of the routing should be displayed.
-* The user has the option of add an `exercise` to the app either creating it or downloading it from a repo.
+* The app consist of `routines`, each routine consist of cards, a card is an `exercise`.
+* An `exercise` is composed of name, time_duration, image_url.
+* Each `exercise` is editable.
+* Before starting another exercise there is a customizable time delay which satisfies `t >= 0`
+* The user can create a `routine` which is defined as an ordered list of exercises, time of the routing should be displayed
+    - routine_time = `SELECT SUM(time_duration) FROM exercises WHERE user = target_user`.
+* The user can add an `exercise` to the app either creating it himself or selecting it from a predefined set of `exercises`.
 
 ## Future requirements:
-* The user has the option to set a schedule to make his routines.
-* The app should send a notification 5 minutes before a routine starts.
+* The user has the option to set a `schedule` to make his routines and the user should be notified `x` time before.
+* Add multilenguage support in the settings menu.
+    - The user has an option to enable the speaking mode in a `routine`, this option makes each exercise to be spoken aloud in addition to it being displayed.
+* A user can connect the app to the web and copy others people routines.
